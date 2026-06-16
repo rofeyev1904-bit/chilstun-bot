@@ -41,14 +41,6 @@ def text_handler(message):
         bot.send_message(chat_id, "Qaysi lavozim uchun murojaat qilyapsiz?")
 
     elif "lavozim" not in data:
-        data["lavozim"] = message.text
-        bot.send_message(chat_id, "Ish tajribangizni yozing:")
-
-    elif "tajriba" not in data:
-        data["tajriba"] = message.text
-        bot.send_message(chat_id, "Rasmingizni yuboring:")
-
-
 @bot.message_handler(content_types=['photo'])
 def photo_handler(message):
     chat_id = message.chat.id
@@ -69,9 +61,17 @@ def photo_handler(message):
 📄 Tajriba: {data['tajriba']}
 """
 
-    # Avval matn yuboriladi
     for admin_id in ADMIN_IDS:
         bot.send_message(admin_id, text)
+
+    photo_id = message.photo[-1].file_id
+
+    for admin_id in ADMIN_IDS:
+        bot.send_photo(admin_id, photo_id)
+
+    bot.send_message(chat_id, "Anketangiz muvaffaqiyatli yuborildi")
+
+    del user_data[chat_id]
 
     # Keyin rasm yuboriladi
     photo_id = message.photo[-1].file_id
