@@ -73,4 +73,4 @@ bot.send_message(chat_id, "Anketangiz muvaffaqiyatli yuborildi!")
 
 del user_data[chat_id]
 
-bot.infinity_polling()
+bot.infinity_polling() 
