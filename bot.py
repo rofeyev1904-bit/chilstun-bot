@@ -61,13 +61,16 @@ def photo_handler(message):
 📄 Tajriba: {data['tajriba']}
 """
 
-    bot.send_message(ADMIN_ID, text)
+    for admin_id in ADMIN_IDS:
+    bot.send_message(admin_id, text)
 
-    photo_id = message.photo[-1].file_id
-    bot.send_photo(ADMIN_ID, photo_id)
+photo_id = message.photo[-1].file_id
 
-    bot.send_message(chat_id, "Anketangiz muffaqiyatli qabul qilindi tez orada siz bilan bog'lanishadi.")
+for admin_id in ADMIN_IDS:
+    bot.send_photo(admin_id, photo_id)
 
-    del user_data[chat_id]
+bot.send_message(chat_id, "Anketangiz muvaffaqiyatli qabul qilindi, tez orada siz bilan bog'lanishadi.")
+
+del user_data[chat_id]
 
 bot.infinity_polling()
