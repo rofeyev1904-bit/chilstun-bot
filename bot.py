@@ -69,8 +69,8 @@ def photo_handler(message):
     for admin_id in ADMIN_IDS:
         bot.send_photo(admin_id, photo_id)
 
-bot.send_message(chat_id, "Anketangiz muvaffaqiyatli qabul qilindi, tez orada siz bilan bog'lanishadi.")
+        bot.send_message(chat_id, "Anketangiz muvaffaqiyatli qabul qilindi, tez orada siz bilan bog'lanishadi.")
 
-del user_data[chat_id]
+             del user_data[chat_id]
 
 bot.infinity_polling()
