@@ -41,7 +41,7 @@ def text_handler(message):
         data["tajriba"] = message.text
         bot.send_message(chat_id, "Rasmingizni yuboring:")
 
-@bot.message_handler(content_types=['photo'])
+@bot.message_handler(content_types=['photo']) 
 def photo_handler(message):
     chat_id = message.chat.id
 
