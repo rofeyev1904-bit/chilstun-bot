@@ -62,12 +62,12 @@ def photo_handler(message):
 """
 
     for admin_id in ADMIN_IDS:
-    bot.send_message(admin_id, text)
+        bot.send_message(admin_id, text)
 
-photo_id = message.photo[-1].file_id
+    photo_id = message.photo[-1].file_id
 
-for admin_id in ADMIN_IDS:
-    bot.send_photo(admin_id, photo_id)
+    for admin_id in ADMIN_IDS:
+        bot.send_photo(admin_id, photo_id)
 
 bot.send_message(chat_id, "Anketangiz muvaffaqiyatli qabul qilindi, tez orada siz bilan bog'lanishadi.")
 
