@@ -71,6 +71,6 @@ def photo_handler(message):
 
     bot.send_message(chat_id, "Anketangiz muvaffaqiyatli yuborildi")
 
-    del user_data[chat_id]
+    del user_data[chat_id] 
 
 bot.infinity_polling() 
