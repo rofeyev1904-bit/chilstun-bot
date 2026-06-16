@@ -67,7 +67,7 @@ def photo_handler(message):
     photo_id = message.photo[-1].file_id
 
     for admin_id in ADMIN_IDS:
-        bot.send_photo(admin_id, photo_id)
+    bot.send_photo(admin_id, photo_id)
 
     bot.send_message(chat_id, "Anketangiz muvaffaqiyatli yuborildi")
 
